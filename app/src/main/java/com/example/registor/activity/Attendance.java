@@ -8,11 +8,10 @@ import android.os.Bundle;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.registor.R;
 import com.example.registor.adapter.AttendanceAdapter;
@@ -33,12 +32,14 @@ import java.util.Calendar;
 
 public class Attendance extends AppCompatActivity {
 
-    RecyclerView recyclerView, recyclerView2, recyclerView3, recyclerView4, recyclerView5, recyclerView6;
-    ArrayList<AttendanceModel> arrayList, arrayList2, arrayList3, arrayList4, arrayList5, arrayList6;
+    ListView recyclerView, recyclerView2, recyclerView3, recyclerView4, recyclerView5, recyclerView6,
+    recyclerView7, recyclerView8, recyclerView9, recyclerView10;
+    ArrayList<AttendanceModel> arrayList, arrayList2, arrayList3, arrayList4, arrayList5, arrayList6,
+    arrayList7, arrayList8, arrayList9, arrayList10;
 
     AutoCompleteTextView date;
 
-    String a, b, c, d, e, t, key, name, mobileNumber;
+    String one, two, three, four, five, six, seven, eight, nine, ten, key, name, mobileNumber;
 
     int mYEAR, mMONTH, mDATE;
 
@@ -57,6 +58,10 @@ public class Attendance extends AppCompatActivity {
         recyclerView4 = findViewById(R.id.recyclerView4);
         recyclerView5 = findViewById(R.id.recyclerView5);
         recyclerView6 = findViewById(R.id.recyclerView6);
+        recyclerView7 = findViewById(R.id.recyclerView7);
+        recyclerView8 = findViewById(R.id.recyclerView8);
+        recyclerView9 = findViewById(R.id.recyclerView9);
+        recyclerView10 = findViewById(R.id.recyclerView10);
 
         date = findViewById(R.id.date);
 
@@ -113,13 +118,6 @@ public class Attendance extends AppCompatActivity {
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
 
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new LinearLayoutManager(Attendance.this));
-            recyclerView2.setLayoutManager(new LinearLayoutManager(Attendance.this));
-            recyclerView3.setLayoutManager(new LinearLayoutManager(Attendance.this));
-            recyclerView4.setLayoutManager(new LinearLayoutManager(Attendance.this));
-            recyclerView5.setLayoutManager(new LinearLayoutManager(Attendance.this));
-            recyclerView6.setLayoutManager(new LinearLayoutManager(Attendance.this));
             AttendanceAdapter adapter = new AttendanceAdapter(Attendance.this, arrayList);
             GroupBAdapter adapter2 = new GroupBAdapter(Attendance.this, arrayList2);
             GroupCAdapter adapter3 = new GroupCAdapter(Attendance.this, arrayList3);
@@ -130,8 +128,8 @@ public class Attendance extends AppCompatActivity {
             recyclerView2.setAdapter(adapter2);
             recyclerView3.setAdapter(adapter3);
             recyclerView4.setAdapter(adapter4);
-            recyclerView5.setAdapter(adapter5);
-            recyclerView6.setAdapter(adapter6);
+//            recyclerView5.setAdapter(adapter5);
+//            recyclerView6.setAdapter(adapter6);
 
             progressDialog.dismiss();
         }
@@ -163,9 +161,9 @@ public class Attendance extends AppCompatActivity {
 
                     String key = dataSnapshot.getKey();
 
-                    if (key.contains("A")) {
+                    if (key.contains("1")) {
 
-                        reference.child("A").addValueEventListener(new ValueEventListener() {
+                        reference.child("1").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -173,12 +171,12 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    a = (String) dataSnapshot1.child("groupNo").getValue();
+                                    one = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
 
-                                    model.setGroupA(a);
-                                    model.setId("A");
+                                    model.setGroup1(one);
+                                    model.setId("1");
                                     model.setMobilenumber(mobileNumber);
                                     model.setName(name);
 
@@ -194,9 +192,9 @@ public class Attendance extends AppCompatActivity {
                         });
 
                     }
-                    if (key.contains("B")) {
+                    if (key.contains("2")) {
 
-                        reference.child("B").addValueEventListener(new ValueEventListener() {
+                        reference.child("2").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -204,12 +202,12 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    b = (String) dataSnapshot1.child("groupNo").getValue();
+                                    two = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
 
-                                    model.setGroupB(b);
-                                    model.setId("B");
+                                    model.setGroup2(two);
+                                    model.setId("2");
                                     model.setMobilenumber(mobileNumber);
                                     model.setName(name);
 
@@ -224,9 +222,9 @@ public class Attendance extends AppCompatActivity {
                             }
                         });
                     }
-                    if (key.contains("C")) {
+                    if (key.contains("3")) {
 
-                        reference.child("C").addValueEventListener(new ValueEventListener() {
+                        reference.child("3").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -234,12 +232,12 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    c = (String) dataSnapshot1.child("groupNo").getValue();
+                                    three = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot.child("phoneNumber").getValue();
 
-                                    model.setGroupC(c);
-                                    model.setId("C");
+                                    model.setGroup3(three);
+                                    model.setId("3");
                                     model.setMobilenumber(mobileNumber);
                                     model.setName(name);
 
@@ -254,9 +252,9 @@ public class Attendance extends AppCompatActivity {
                             }
                         });
                     }
-                    if (key.contains("D")){
+                    if (key.contains("4")){
 
-                        reference.child("D").addValueEventListener(new ValueEventListener() {
+                        reference.child("4").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -264,12 +262,12 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    d = (String) dataSnapshot1.child("groupNo").getValue();
+                                    four = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
 
-                                    model.setGroupD(d);
-                                    model.setId("D");
+                                    model.setGroup4(four);
+                                    model.setId("4");
                                     model.setName(name);
                                     model.setMobilenumber(mobileNumber);
 
@@ -286,9 +284,9 @@ public class Attendance extends AppCompatActivity {
                         });
 
                     }
-                    if (key.contains("E")){
+                    if (key.contains("5")){
 
-                        reference.child("E").addValueEventListener(new ValueEventListener() {
+                        reference.child("5").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -296,12 +294,12 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    e = (String) dataSnapshot1.child("groupNo").getValue();
+                                    five = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
 
-                                    model.setGroupE(e);
-                                    model.setId("E");
+                                    model.setGroup5(five);
+                                    model.setId("5");
                                     model.setName(name);
                                     model.setMobilenumber(mobileNumber);
 
@@ -318,9 +316,9 @@ public class Attendance extends AppCompatActivity {
                         });
 
                     }
-                    if (key.contains("T")){
+                    if (key.contains("6")){
 
-                        reference.child("T").addValueEventListener(new ValueEventListener() {
+                        reference.child("6").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -328,16 +326,144 @@ public class Attendance extends AppCompatActivity {
 
                                     AttendanceModel model = new AttendanceModel();
 
-                                    t = (String) dataSnapshot1.child("groupNo").getValue();
+                                    six = (String) dataSnapshot1.child("groupNo").getValue();
                                     name = (String) dataSnapshot1.child("name").getValue();
                                     mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
 
-                                    model.setGroupT(t);
-                                    model.setId("T");
+                                    model.setGroup6(six);
+                                    model.setId("6");
                                     model.setName(name);
                                     model.setMobilenumber(mobileNumber);
 
                                     arrayList6.add(model);
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                    if (key.contains("7")){
+
+                        reference.child("7").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
+
+                                    AttendanceModel model = new AttendanceModel();
+
+                                    seven = (String) dataSnapshot1.child("groupNo").getValue();
+                                    name = (String) dataSnapshot1.child("name").getValue();
+                                    mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
+
+                                    model.setGroup7(seven);
+                                    model.setId("7");
+                                    model.setName(name);
+                                    model.setMobilenumber(mobileNumber);
+
+                                    arrayList7.add(model);
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                    if (key.contains("8")){
+
+                        reference.child("8").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
+
+                                    AttendanceModel model = new AttendanceModel();
+
+                                    eight = (String) dataSnapshot1.child("groupNo").getValue();
+                                    name = (String) dataSnapshot1.child("name").getValue();
+                                    mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
+
+                                    model.setGroup8(eight);
+                                    model.setId("8");
+                                    model.setName(name);
+                                    model.setMobilenumber(mobileNumber);
+
+                                    arrayList8.add(model);
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                    if (key.contains("9")){
+
+                        reference.child("9").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
+
+                                    AttendanceModel model = new AttendanceModel();
+
+                                    nine = (String) dataSnapshot1.child("groupNo").getValue();
+                                    name = (String) dataSnapshot1.child("name").getValue();
+                                    mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
+
+                                    model.setGroup9(nine);
+                                    model.setId("9");
+                                    model.setName(name);
+                                    model.setMobilenumber(mobileNumber);
+
+                                    arrayList9.add(model);
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                    if (key.contains("10")){
+
+                        reference.child("10").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
+
+                                    AttendanceModel model = new AttendanceModel();
+
+                                    ten = (String) dataSnapshot1.child("groupNo").getValue();
+                                    name = (String) dataSnapshot1.child("name").getValue();
+                                    mobileNumber = (String) dataSnapshot1.child("phoneNumber").getValue();
+
+                                    model.setGroup10(ten);
+                                    model.setId("10");
+                                    model.setName(name);
+                                    model.setMobilenumber(mobileNumber);
+
+                                    arrayList10.add(model);
 
                                 }
 
