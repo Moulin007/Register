@@ -143,6 +143,10 @@ public class Attendance extends AppCompatActivity {
         arrayList4 = new ArrayList<>();
         arrayList5 = new ArrayList<>();
         arrayList6 = new ArrayList<>();
+        arrayList7 = new ArrayList<>();
+        arrayList8 = new ArrayList<>();
+        arrayList9 = new ArrayList<>();
+        arrayList10 = new ArrayList<>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -156,6 +160,10 @@ public class Attendance extends AppCompatActivity {
                 arrayList3.clear();
                 arrayList5.clear();
                 arrayList6.clear();
+                arrayList7.clear();
+                arrayList8.clear();
+                arrayList9.clear();
+                arrayList10.clear();
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
