@@ -5,8 +5,8 @@ com/example/registor/activity/FoldingContactList.java
  com.example.registor.activity.FoldingContactList
  com.example.registor.activity.FoldingContactList$getData
  com.example.registor.activity.FoldingContactList$getData$1
-com/example/registor/activity/MainScreen.java
- com.example.registor.activity.MainScreen
+com/example/registor/adapter/GroupBAdapter.java
+ com.example.registor.adapter.GroupBAdapter
 com/example/registor/model/DetailItem.java
  com.example.registor.model.DetailItem
 com/example/registor/adapter/SliderAdapter.java
@@ -37,6 +37,15 @@ com/example/registor/adapter/DetailAdapter.java
  com.example.registor.adapter.DetailAdapter$ViewHolder
 com/example/registor/adapter/GroupCAdapter.java
  com.example.registor.adapter.GroupCAdapter
+com/example/registor/model/SliderModel.java
+ com.example.registor.model.SliderModel
+com/example/registor/adapter/GroupTAdapter.java
+ com.example.registor.adapter.GroupTAdapter
+ com.example.registor.adapter.GroupTAdapter$ViewHolder
+com/example/registor/adapter/GroupDAdapter.java
+ com.example.registor.adapter.GroupDAdapter
+com/example/registor/activity/MainScreen.java
+ com.example.registor.activity.MainScreen
 com/example/registor/activity/Attendance.java
  com.example.registor.activity.Attendance
  com.example.registor.activity.Attendance$1
@@ -52,12 +61,3 @@ com/example/registor/activity/Attendance.java
  com.example.registor.activity.Attendance$2$8
  com.example.registor.activity.Attendance$2$9
  com.example.registor.activity.Attendance$getData
-com/example/registor/adapter/GroupTAdapter.java
- com.example.registor.adapter.GroupTAdapter
- com.example.registor.adapter.GroupTAdapter$ViewHolder
-com/example/registor/adapter/GroupDAdapter.java
- com.example.registor.adapter.GroupDAdapter
-com/example/registor/model/SliderModel.java
- com.example.registor.model.SliderModel
-com/example/registor/adapter/GroupBAdapter.java
- com.example.registor.adapter.GroupBAdapter

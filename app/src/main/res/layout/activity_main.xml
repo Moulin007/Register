@@ -80,7 +80,8 @@
                     android:hint="ટીમ નામ"
                     android:imeOptions="actionNext"
                     android:inputType="none"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -206,7 +207,8 @@
                     android:hint="જન્મ તારીખ"
                     android:imeOptions="actionNext"
                     android:inputType="none"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -227,7 +229,8 @@
                     android:hint="ઉમર"
                     android:imeOptions="actionNext"
                     android:inputType="none"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -247,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:hint="ધોરણ"
                     android:imeOptions="actionNext"
-                    android:inputType="phone"
+                    android:inputType="textCapWords"
                     android:paddingLeft="10dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -267,8 +270,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="શાળા"
-                    android:imeOptions="actionDone"
-                    android:inputType="none"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
                     android:paddingLeft="10dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -353,8 +356,8 @@
                     android:hint="આવડત"
                     android:imeOptions="actionNext"
                     android:padding="10dp"
-                    android:inputType="phone"
-                    android:maxLength="10" />
+                    android:inputType="none"
+                    android:editable="false" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -374,7 +377,7 @@
                     android:layout_height="wrap_content"
                     android:hint="પરિચિત સભ્ય નામ"
                     android:imeOptions="actionNext"
-                    android:inputType="none"
+                    android:inputType="textCapWords"
                     android:paddingLeft="10dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -417,7 +420,7 @@
                     android:layout_height="wrap_content"
                     android:hint="શહેર"
                     android:imeOptions="actionNext"
-                    android:inputType="none"
+                    android:inputType="textCapWords"
                     android:paddingLeft="10dp" />
 
             </com.google.android.material.textfield.TextInputLayout>

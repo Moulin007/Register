@@ -90,10 +90,6 @@ public class Attendance extends AppCompatActivity {
             datePickerDialog.show();
 
         });
-
-//        getGroupAData();
-
-
     }
 
     public class getData extends AsyncTask<Void, Void, Void>{
@@ -154,17 +150,6 @@ public class Attendance extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                arrayList.clear();
-                arrayList2.clear();
-                arrayList3.clear();
-                arrayList3.clear();
-                arrayList5.clear();
-                arrayList6.clear();
-                arrayList7.clear();
-                arrayList8.clear();
-                arrayList9.clear();
-                arrayList10.clear();
-
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
                     String key = dataSnapshot.getKey();
@@ -174,6 +159,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("1").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
 
@@ -205,6 +191,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("2").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList2.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
 
@@ -235,6 +222,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("3").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList3.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
 
@@ -265,6 +253,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("4").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList4.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -297,6 +286,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("5").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList5.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -329,6 +319,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("6").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList6.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -361,6 +352,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("7").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList7.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -393,6 +385,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("8").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList8.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -425,6 +418,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("9").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList9.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
@@ -457,6 +451,7 @@ public class Attendance extends AppCompatActivity {
                         reference.child("10").addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                arrayList10.clear();
 
                                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
 
